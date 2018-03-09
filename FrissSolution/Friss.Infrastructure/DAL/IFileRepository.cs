@@ -11,6 +11,6 @@ namespace Friss.Infrastructure.DAL
 	{
 		void AddFile(Guid fileId, string extension, Stream file);
 
-		Stream ReadFile(Guid fileId);
+		Stream ReadFile(Guid fileId, string extension);
 	}
 }

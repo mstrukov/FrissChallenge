@@ -52,6 +52,7 @@
     <Compile Include="DAL\Database\DocumentRepository.cs" />
     <Compile Include="DAL\Database\IFrissDbContext.cs" />
     <Compile Include="DAL\FileSystem\AddFileInfo.cs" />
+    <Compile Include="DAL\FileSystem\FrissFileRepository.cs" />
     <Compile Include="DAL\FileSystem\FrissFileSystemContext.cs" />
     <Compile Include="DAL\FileSystem\IFrissFileSystemContext.cs" />
     <Compile Include="DAL\IEntitiesRepository.cs" />

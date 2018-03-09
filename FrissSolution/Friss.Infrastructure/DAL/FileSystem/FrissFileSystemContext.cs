@@ -27,6 +27,11 @@ namespace Friss.Infrastructure.DAL.FileSystem
 			});
 		}
 
+		public Stream ReadFile(Guid fileId, string extension)
+		{
+			return new FileStream(GetFilePath(fileId, extension), FileMode.Open, FileAccess.Read);
+		}
+
 		public async Task SaveChanges()
 		{
 			await Task.WhenAll(_addedFiles.Select(x => WriteFile(x)).ToArray());
