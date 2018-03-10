@@ -9,8 +9,9 @@ namespace Friss.Domain.Entities
 	public class Document : EntityBase
 	{
 		public string OwnerName { get; set; }
-		public int Size { get; set; }
+		public string FileName { get; set; }
+		public long? Size { get; set; }
 		public DateTime CreatedDate { get; set; }
-		public DateTime LastAccessDate { get; set; }
+		public DateTime? LastAccessDate { get; set; }
 	}
 }

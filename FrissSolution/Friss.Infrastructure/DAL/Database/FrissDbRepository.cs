@@ -21,7 +21,7 @@ namespace Friss.Infrastructure.DAL.Database
 			_dbSet = context.Set<TEntity>();
 		}
 
-		public virtual TEntity GetById(int id)
+		public virtual TEntity GetById(Guid id)
 		{
 			return _dbSet.Find(id);
 		}

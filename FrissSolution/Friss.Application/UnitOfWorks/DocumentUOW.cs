@@ -15,19 +15,13 @@ namespace Friss.Application.UnitOfWorks
 		private bool _disposed = false;
 		private IFrissFileSystemContext _frissFileSystemContext;
 		private IFrissDbContext _frissDbContext;
-		public IFileRepository FileRepository { get; }
-		public IEntitiesRepository<Document> DocumentRepository { get; }
 
 		public DocumentUOW(
 			IFrissFileSystemContext frissFileSystemContext,
-			IFrissDbContext frissDbContext,
-			IFileRepository fileRepository,
-			IEntitiesRepository<Document> documentRepository)
+			IFrissDbContext frissDbContext)
 		{
 			_frissFileSystemContext = frissFileSystemContext;
 			_frissDbContext = frissDbContext;
-			FileRepository = fileRepository;
-			DocumentRepository = documentRepository;
 		}
 
 		protected override void Dispose(bool disposing)

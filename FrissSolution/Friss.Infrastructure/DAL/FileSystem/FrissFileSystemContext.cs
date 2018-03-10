@@ -29,12 +29,16 @@ namespace Friss.Infrastructure.DAL.FileSystem
 
 		public Stream ReadFile(Guid fileId, string extension)
 		{
-			return new FileStream(GetFilePath(fileId, extension), FileMode.Open, FileAccess.Read);
+			var fileName = GetFilePath(fileId, extension);
+			return File.Exists(fileName) ?
+				new FileStream(fileName, FileMode.Open, FileAccess.Read) :
+				null;
 		}
 
 		public async Task SaveChanges()
 		{
 			await Task.WhenAll(_addedFiles.Select(x => WriteFile(x)).ToArray());
+			_addedFiles.Clear();
 		}
 
 		private async Task WriteFile(KeyValuePair<Guid, AddFileInfo> addFileInfo)

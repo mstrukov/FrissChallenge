@@ -12,6 +12,6 @@ namespace Friss.Infrastructure.DAL
 	{
 		void Add(TEntity item);
 
-		TEntity GetById(int id);
+		TEntity GetById(Guid id);
 	}
 }

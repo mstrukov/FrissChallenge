@@ -12,7 +12,7 @@ namespace Friss.Application.UnitOfWorks
 		/// <summary>
 		/// Ensuares all changes are committed at the same time thus reducing possible locks time
 		/// </summary>
-		public async void SaveChanges()
+		public async Task SaveChanges()
 		{
 			using (TransactionScope tran = new TransactionScope())
 			{
