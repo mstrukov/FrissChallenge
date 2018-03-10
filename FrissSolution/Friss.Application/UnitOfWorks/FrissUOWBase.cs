@@ -14,7 +14,7 @@ namespace Friss.Application.UnitOfWorks
 		/// </summary>
 		public async Task SaveChanges()
 		{
-			using (TransactionScope tran = new TransactionScope())
+			using (TransactionScope tran = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
 			{
 				//TODO: Implement a transaction manager for file repository
 				//to make sure files are written to a store in a transactional way

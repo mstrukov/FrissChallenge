@@ -48,10 +48,10 @@ namespace Friss.Presentation
             // container.LoadConfiguration();
 
             
-            container.RegisterType<IFrissDbContext, FrissDbContext>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IFrissDbContext, FrissDbContext>(new PerThreadLifetimeManager());
 			container.RegisterType<IFrissFileSystemContext, FrissFileSystemContext>(
-				new ContainerControlledLifetimeManager(),
-				new InjectionConstructor(HttpContext.Current.Server.MapPath("~/App_Data/FileStorage")));
+				new PerThreadLifetimeManager(),
+				new InjectionConstructor(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)));
 
 			container.RegisterType<IFileRepository, FrissFileRepository>();
 			container.RegisterType<IEntitiesRepository<Document>, DocumentRepository>();

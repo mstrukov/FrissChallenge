@@ -24,12 +24,14 @@ namespace Friss.Presentation.Controllers
 			_documentRepository = documentRepository;
 		}
 
+		[HttpGet]
 		// GET api/<controller>
 		public IEnumerable<string> Get()
 		{
 			return new string[] { "value1", "value2" };
 		}
 
+		[HttpGet]
 		// GET api/<controller>/5
 		public async Task<IHttpActionResult> Get(Guid id)
 		{
@@ -59,6 +61,7 @@ namespace Friss.Presentation.Controllers
 			return ResponseMessage(httpResponseMessage);
 		}
 
+		[HttpPost]
 		// POST api/<controller>
 		public async Task<IHttpActionResult> Post()
 		{
@@ -80,7 +83,6 @@ namespace Friss.Presentation.Controllers
 
 			var filename = file.Headers.ContentDisposition.FileName.Trim('\"');
 			var fileExtension = Path.GetExtension(filename);
-			var fileSize = file.Headers.ContentDisposition.Size;
 
 			if (string.IsNullOrEmpty(filename) || string.IsNullOrEmpty(fileExtension))
 			{
@@ -89,7 +91,7 @@ namespace Friss.Presentation.Controllers
 
 			using (var stream = await file.ReadAsStreamAsync())
 			{
-				var documentId = await _documentService.AddDocument(stream, Path.GetExtension(filename), fileSize);
+				var documentId = await _documentService.AddDocument(stream, filename);
 				return CreatedAtRoute("DefaultApi", new { id = documentId }, new { id = documentId });
 			}
 		}

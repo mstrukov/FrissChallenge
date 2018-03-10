@@ -7,7 +7,7 @@ namespace Friss.Application.Services
 {
 	public interface IDocumentService
 	{
-		Task<Guid> AddDocument(Stream fileStream, string fileName, long? size);
+		Task<Guid> AddDocument(Stream fileStream, string fileName);
 		Task<Stream> GetDocumentFile(Document document);
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Friss.Presentation.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -9,10 +10,11 @@ namespace Friss.Presentation
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+			// Web API configuration and services
+			config.Filters.Add(new AppExceptionFilterAttribute());
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
+			// Web API routes
+			config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

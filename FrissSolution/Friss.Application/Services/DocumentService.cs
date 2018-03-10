@@ -54,7 +54,7 @@ namespace Friss.Application.Services
 			}
 		}
 
-		public async Task<Guid> AddDocument(Stream fileStream, string fileName, long? size)
+		public async Task<Guid> AddDocument(Stream fileStream, string fileName)
 		{
 			if (fileStream == null)
 			{
@@ -84,7 +84,7 @@ namespace Friss.Application.Services
 					LastAccessDate = null,
 					FileName = fileName,
 					OwnerName = "TODO",
-					Size = size
+					Size = fileStream.Length
 				});
 
 				_fileRepository.AddFile(documentId, extension, fileStream);

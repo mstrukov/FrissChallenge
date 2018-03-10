@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friss.Application", "Friss.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friss.Presentation", "Friss.Presentation\Friss.Presentation.csproj", "{9C84C9F6-461A-402A-9557-A95C1B3D3AFC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{42075E6B-1CEB-4497-A3C6-401C0BCE9D57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{55FF7CB2-77F2-410D-92EF-1F48F4F457C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friss.IntegrationTests.WebAPI", "Friss.IntegrationTests.WebAPI\Friss.IntegrationTests.WebAPI.csproj", "{681CF84E-6A96-4B7B-876C-0912044ADFA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +39,17 @@ Global
 		{9C84C9F6-461A-402A-9557-A95C1B3D3AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C84C9F6-461A-402A-9557-A95C1B3D3AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C84C9F6-461A-402A-9557-A95C1B3D3AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681CF84E-6A96-4B7B-876C-0912044ADFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681CF84E-6A96-4B7B-876C-0912044ADFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681CF84E-6A96-4B7B-876C-0912044ADFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681CF84E-6A96-4B7B-876C-0912044ADFA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55FF7CB2-77F2-410D-92EF-1F48F4F457C2} = {42075E6B-1CEB-4497-A3C6-401C0BCE9D57}
+		{681CF84E-6A96-4B7B-876C-0912044ADFA4} = {55FF7CB2-77F2-410D-92EF-1F48F4F457C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D67B8E2-9374-41F5-8307-B3A4B793B972}
