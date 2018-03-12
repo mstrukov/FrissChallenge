@@ -3,6 +3,7 @@ using Friss.Domain.Entities;
 using Friss.Infrastructure.DAL;
 using Friss.Infrastructure.DAL.Database;
 using Friss.Infrastructure.DAL.FileSystem;
+using Friss.Infrastructure.Logging;
 using System;
 using System.Web;
 using Unity;
@@ -57,6 +58,7 @@ namespace Friss.Presentation
 			container.RegisterType<IEntitiesRepository<Document>, DocumentRepository>();
 
 			container.RegisterType<IDocumentService, DocumentService>();
+			container.RegisterType<IFrissLogger, FrissLogger>(new ContainerControlledLifetimeManager());
 		}
     }
 }
